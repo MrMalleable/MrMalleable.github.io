@@ -73,6 +73,254 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-operating-system-04" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/06/operating-system-04/" class="article-date">
+  <time datetime="2017-11-05T16:00:00.000Z" itemprop="datePublished">2017-11-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/06/operating-system-04/">操作系统的主要功能</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <h3 id="处理机管理功能"><a href="#处理机管理功能" class="headerlink" title="处理机管理功能"></a>处理机管理功能</h3><p>处理机管理的主要功能是：创建和撤销进程，对诸进程的运行进行协调，实现进程之间的信息交换，以及按照一定的算法把处理机分配给进程。</p>
+<ol>
+<li>进程控制</li>
+</ol>
+<p>为作业创建进程、撤销（终止）已结束的进程，以及控制进程在运行过程中的状态转换。</p>
+<ol>
+<li>进程同步</li>
+</ol>
+<p>进程互斥方式和进程同步方式。最简单的用于实现进程互斥的机制是为每一个临界资源配置一把锁W,当锁打开时，进程可以对该临界资源进行访问；而当锁关上时，则禁止进程访问该临界资源。而实现进程同步时，最常用的机制就是信号量机制。</p>
+<ol>
+<li>进程通信</li>
+</ol>
+<p>当相互合作的进程处于同一计算机系统时，通常在它们之间采用直接通信方式，即由源进程利用发送命令直接将消息(message)挂到目标进程的消息队列上，以后由目标进程利用接收命令从其消息队列中取出消息。</p>
+<ol>
+<li>调度</li>
+</ol>
+<p>（1）作业调度。 作业调度的基本任务是从后备队列中按照一定的算法选择若干个作业，为它们分配运行所需的资源，在将这些作业调入内存后，分别为它们建立进程，使它们都成为可能获得处理机的就绪进程，并将他们插入到就绪队列中。</p>
+<p>（2）进程调度。 进程调度的任务是从进程的就绪队列中按照一定的算法选出一个进程，将处理机分配给它，并为它设置运行现场，使其投入执行。</p>
+<h3 id="存储器管理功能"><a href="#存储器管理功能" class="headerlink" title="存储器管理功能"></a>存储器管理功能</h3><p>存储器管理的主要任务，是为多道程序的运行提供良好的环境，提高存储器的利用率，方便用户使用，并能从逻辑上扩充内存。为此，存储器管理应具有内存分配和回收、内存保护、地址映射和内存扩充等功能。</p>
+<ol>
+<li>内存分配</li>
+</ol>
+<p>主要任务：</p>
+<ul>
+<li>为每道程序分配内存空间，使它们“各得其所”。</li>
+<li>提高存储的利用率，尽量减少不可用的内存空间（碎片）。</li>
+<li>允许正在运行的程序申请附加的内存空间，以适应程序和数据动态增长的需要。</li>
+</ul>
+<p>OS在实现内存分配时，可采取静态和动态两种方式：</p>
+<ul>
+<li>静态分配方式。每个作业的内存空间是在作业装入时确定的，在作业装入后的整个运行期间不允许作业再申请新的内存空间，也不允许作业在内存中“移动”。</li>
+<li>动态分配方式。每个作业所要求的基本内存空间虽然也是在装入时确定的，但允许作业在运行过程中继续申请新的附加内存空间，以适应程序和数据的动态增长，也允许作业在内存中“移动”。</li>
+</ul>
+<ol>
+<li>内存保护</li>
+</ol>
+<p>内存保护的主要任务是：（1）确保每道用户程序都仅在自己的内存空间内运行，彼此互不干扰。（2）决不允许用户程序访问操作系统的程序和数据，也不允许用户程序转移到非共享的其它用户程序中执行。</p>
+<p>一种比较简单的内存保护机制是设置两个界限寄存器，分别用于存放正在执行程序的上界和下届。在程序运行时，系统须对每条指令所要访问的地址进行检查，如果发生越界，使发出越界中断请求，以停止该程序的执行。</p>
+<ol>
+<li><p>地址映射<br>在多道程序环境中，由于每道程序编译和链接后所形成的可装入程序其地址都是从0开始的，但不可能将它们从”0”地址（物理）开始装入内存，致使（各程序段）地址空间内的逻辑地址与其在内存空间中的物理地址并不相一致。为保证程序正确进行，存储器管理必须地址映射功能，即能够将地址空间中的逻辑地址转换为内存空间中与之对应的物理地址。<strong>该功能应在硬件的支持下完成。</strong></p>
+</li>
+<li><p>内存扩充</p>
+</li>
+</ol>
+<ul>
+<li>请求调入功能，系统允许在仅装入部分用户程序和数据的情况下，便能启动该程序运行。在程序运行过程中共，若发现要继续运行时所需的程序和数据尚未装入内存，可向OS发出请求，由OS从磁盘中将所需部分调入内存，以便继续运行。</li>
+<li>置换功能，若发现在内存中已无足够的空间来装入需要调入的程序和数据时，系统应能将内存中的一部分暂时不用的程序和数据调至硬盘上，以腾出内存空间，然后再将所需调入的部分装入内存。</li>
+</ul>
+<h3 id="设备管理功能"><a href="#设备管理功能" class="headerlink" title="设备管理功能"></a>设备管理功能</h3><p>设备管理的主要任务如下：<br>(1)完成用户进程提出的I/O请求，为用户进程分配所需的I/O设备，并完成指定的I/O操作。</p>
+<p>(2)提高CPU和I/O设备的利用率，提高I/O速度，方便用户使用I/O设备。</p>
+<ol>
+<li>缓冲管理</li>
+</ol>
+<p>最常见的缓冲区机制有：<strong>单缓冲机制、能够实现双向同时传送数据的双缓冲机制、能供多个设备同时使用的公共缓冲池机制。</strong></p>
+<ol>
+<li>设备分配</li>
+</ol>
+<p>为实现设备分配，系统中应设置设备控制表、控制器控制表等数据结构，用于记录设备及控制器等的标识符和状态。</p>
+<ol>
+<li>设备处理</li>
+</ol>
+<p>设备处理过程是：首先检查I/O请求的合法性，了解设备状态是否是空闲的，读取有关的传递参数及设置设备的工作方式。然后向设备控制器发出I/O命令，启动I/O设备完成指定的I/O操作。此外设备驱动程序还应能及时响应由控制器发来的中断请求，并根据该终端请求的类型，调用相应的中断处理程序进行处理。对于设置了通道的计算机系统，设备处理程序还应能根据用户的I/O请求自动地构成通道程序。</p>
+<h3 id="文件管理功能"><a href="#文件管理功能" class="headerlink" title="文件管理功能"></a>文件管理功能</h3><ol>
+<li>文件存储空间的管理。</li>
+<li>目录管理。</li>
+<li>文件的读写管理和保护</li>
+</ol>
+<h3 id="操作系统与用户之间的接口"><a href="#操作系统与用户之间的接口" class="headerlink" title="操作系统与用户之间的接口"></a>操作系统与用户之间的接口</h3><ol>
+<li>用户接口<br>（1）联机用户接口<br>（2）脱机用户接口<br>（3）图形用户接口</li>
+<li>程序接口</li>
+</ol>
+<h3 id="现代操作系统的新功能"><a href="#现代操作系统的新功能" class="headerlink" title="现代操作系统的新功能"></a>现代操作系统的新功能</h3><ol>
+<li>系统安全<ul>
+<li>认证技术</li>
+<li>密码技术</li>
+<li>访问控制技术</li>
+<li>反病毒技术</li>
+</ul>
+</li>
+<li>网络的功能和服务<ul>
+<li>网络通信</li>
+<li>资源管理</li>
+<li>应用互操作</li>
+</ul>
+</li>
+<li>支持多媒体<ul>
+<li>接纳控制功能</li>
+<li>实时调度</li>
+<li>多媒体文件存储</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p>end</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.google.com/2017/11/06/operating-system-04/" data-id="cj9npvjb90009x0jsttkbmguy" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+ 
+
+
+  
+    <article id="post-operating-system-05" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/06/operating-system-05/" class="article-date">
+  <time datetime="2017-11-05T16:00:00.000Z" itemprop="datePublished">2017-11-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/06/operating-system-05/">OS结构设计</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <h3 id="传统操作系统结构"><a href="#传统操作系统结构" class="headerlink" title="传统操作系统结构"></a>传统操作系统结构</h3><ol>
+<li>无结构操作系统</li>
+<li>模块化结构OS<ul>
+<li>模块化程序设计技术的基本概念</li>
+<li>模块独立性</li>
+<li>模块接口法的优缺点</li>
+</ul>
+</li>
+<li>分层是结构OS<ul>
+<li>分层式结构的基本概念</li>
+<li>分层结构的优缺点</li>
+</ul>
+</li>
+</ol>
+<h3 id="客户-服务器模式-Client-Server-Model简介"><a href="#客户-服务器模式-Client-Server-Model简介" class="headerlink" title="客户/服务器模式(Client/Server Model简介)"></a>客户/服务器模式(Client/Server Model简介)</h3><ol>
+<li>客户/服务器模式的由来、组成和类型</li>
+<li>客户与服务器之间的交互<ul>
+<li>客户发送请求消息</li>
+<li>服务器接收消息</li>
+<li>服务器回送消息</li>
+<li>客户机接收消息</li>
+</ul>
+</li>
+<li>客户/服务器模式的优点<ul>
+<li>数据的分布式处理和存储</li>
+<li>便于集中管理</li>
+<li>灵活性和可扩充性</li>
+<li>易于改编应用软件<br>基本客户/服务器模式的不足之处是存在着不可靠性和瓶颈问题。在系统仅有一个服务器时，一旦服务器故障，将导致整个网络瘫痪。当服务器在重负荷下工作时，会因忙不过来而显著地延长对用户请求的响应时间。如果在网络中配置多个服务器，并采取相应的安全措施，则这种不足可加以改善。</li>
+</ul>
+</li>
+</ol>
+<h3 id="面向对象的程序设计-Object-Oriented-Programming-技术简介"><a href="#面向对象的程序设计-Object-Oriented-Programming-技术简介" class="headerlink" title="面向对象的程序设计(Object-Oriented Programming)技术简介"></a>面向对象的程序设计(Object-Oriented Programming)技术简介</h3><ol>
+<li>面向对象技术的基本概念</li>
+</ol>
+<p>抽象和隐蔽两大原则。</p>
+<ol>
+<li>面向技术的优点<ul>
+<li>通过“重用”提高产品质量和生产率</li>
+<li>使系统具有更好的易修改性和易扩展性</li>
+<li>更易于保证系统的“正确性”和“可靠性”</li>
+</ul>
+</li>
+</ol>
+<h3 id="微内核OS结构"><a href="#微内核OS结构" class="headerlink" title="微内核OS结构"></a>微内核OS结构</h3><ol>
+<li><p>微内核操作系统的基本概念</p>
+<ul>
+<li>足够小的内核</li>
+<li>基于客户/服务器模式</li>
+<li>应用“机制与策略分离”原理</li>
+<li>采用面向对象技术</li>
+</ul>
+</li>
+<li><p>微内核的基本功能</p>
+<ul>
+<li>进程（线程）管理</li>
+<li>低级存储器管理</li>
+<li>中断和陷入处理</li>
+</ul>
+</li>
+<li><p>微内核操作系统的优点</p>
+<ul>
+<li>提高了系统的可扩展性</li>
+<li>增强了系统的可靠性</li>
+<li>可移植性强</li>
+<li>提供了对分布式系统的支持</li>
+<li>融入了面向对象技术</li>
+</ul>
+</li>
+<li><p>微内核操作系统存在的问题</p>
+</li>
+</ol>
+<p>效率降低最主要的原因是，在完成一次客户对操作系统提出的服务请求时，需要利用消息实现多次交互和进行用户/内核模式与上下文的多次切换。然而，在早期的OS中，用户进程在请求取得OS服务时，一般只需进行两次上下文的切换：一次是在执行系统调用后由用户态专项系统态时；另一次是在系统完成用户请求的服务后，由系统态返回用户态时。</p>
+<hr>
+<p>end</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.google.com/2017/11/06/operating-system-05/" data-id="cj9npvjbp000bx0jsy0iuv3ez" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+ 
+
+
+  
     <article id="post-10-skills-hard-to-learn" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/10/27/10-skills-hard-to-learn/" class="article-date">
@@ -115,7 +363,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.google.com/2017/10/27/10-skills-hard-to-learn/" data-id="cj9le19b20000i0js1xdhdwvc" class="article-share-link">分享</a>
+      <a data-url="http://www.google.com/2017/10/27/10-skills-hard-to-learn/" data-id="cj9npvjae0001x0js59xejfui" class="article-share-link">分享</a>
       
       
       
@@ -175,7 +423,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.google.com/2017/10/26/windows下git-bash无法修改权限/" data-id="cj9le19bi000mi0jsgvo8nz8j" class="article-share-link">分享</a>
+      <a data-url="http://www.google.com/2017/10/26/windows下git-bash无法修改权限/" data-id="cj9npvjbp000mx0js3zxla45i" class="article-share-link">分享</a>
       
       
       
@@ -234,7 +482,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.google.com/2017/10/26/barack-obama-s-10-rules-for-success/" data-id="cj9le19bi000bi0js4k2q9fwt" class="article-share-link">分享</a>
+      <a data-url="http://www.google.com/2017/10/26/barack-obama-s-10-rules-for-success/" data-id="cj9npvjb90008x0jszk2nm5yu" class="article-share-link">分享</a>
       
       
       
@@ -290,7 +538,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.google.com/2017/10/26/steve-jobs-s-10-rules-for-success/" data-id="cj9le19bi000gi0js67gewbiy" class="article-share-link">分享</a>
+      <a data-url="http://www.google.com/2017/10/26/steve-jobs-s-10-rules-for-success/" data-id="cj9npvjbp000jx0jsbh6jw9px" class="article-share-link">分享</a>
       
       
       
@@ -346,7 +594,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.google.com/2017/10/26/Mark-Zuckerberg-s-10-rules-for-success/" data-id="cj9le19b20005i0jsawosbz0i" class="article-share-link">分享</a>
+      <a data-url="http://www.google.com/2017/10/26/Mark-Zuckerberg-s-10-rules-for-success/" data-id="cj9npvj9j0000x0jsvlkco9h6" class="article-share-link">分享</a>
       
       
       
@@ -393,7 +641,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.google.com/2017/10/25/删除重复的包/" data-id="cj9le19bx000oi0jsqs1deyu7" class="article-share-link">分享</a>
+      <a data-url="http://www.google.com/2017/10/25/删除重复的包/" data-id="cj9npvjbp000px0jsg6enqj5v" class="article-share-link">分享</a>
       
       
       
@@ -527,7 +775,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.google.com/2017/10/25/奇特的一生读书笔记/" data-id="cj9le19bx000pi0jsl2i2dcm6" class="article-share-link">分享</a>
+      <a data-url="http://www.google.com/2017/10/25/奇特的一生读书笔记/" data-id="cj9npvjdf0018x0jsrwlyjy97" class="article-share-link">分享</a>
       
       
       
@@ -617,177 +865,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.google.com/2017/10/25/operating-system-03/" data-id="cj9le19bi000ki0jsx23c886e" class="article-share-link">分享</a>
+      <a data-url="http://www.google.com/2017/10/25/operating-system-03/" data-id="cj9npvjbp000lx0jsdd9qhq8r" class="article-share-link">分享</a>
       
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/操作系统的基本特性/">操作系统的基本特性</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
- 
-
-
-  
-    <article id="post-时间管理笔记" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/10/24/时间管理笔记/" class="article-date">
-  <time datetime="2017-10-24T13:02:57.000Z" itemprop="datePublished">2017-10-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/24/时间管理笔记/">时间管理笔记</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- Table of Contents -->
-        
-        <p>摘自<a href="http://weibo.com/ttarticle/p/show?id=2309404166314838088584&amp;luicode=20000174" target="_blank" rel="external">李开复：我的时间管理秘诀</a></p>
-<p><a href="http://weibo.com/ttarticle/p/show?id=2309403990771492592561" target="_blank" rel="external">扎克伯格的时间管理</a></p>
-<h1 id="李开复：我的时间管理秘诀"><a href="#李开复：我的时间管理秘诀" class="headerlink" title="李开复：我的时间管理秘诀"></a>李开复：我的时间管理秘诀</h1><h2 id="事情分轻重缓急"><a href="#事情分轻重缓急" class="headerlink" title="事情分轻重缓急"></a>事情分轻重缓急</h2><p>每天管理时间的一种好方法就是，早上确定今天要做的紧急事和重要事，睡前回顾一下，这一天有没有做到两者的平衡。</p>
-<p>建议每天对该做的事情排好优先次序，并按照这个次序来做。</p>
-<p>书籍&lt;高效能人士的七个习惯&gt;–史蒂芬。柯：重要事和紧要事的差别是人们浪费时间的最大理由之一。因为人的惯性是先做最紧急的事情，但这么做会导致一些重要的事情被荒废掉。</p>
-<p>必须做的事情做到最好，但尽量做的事情尽力而为即可。</p>
-<p>多关注那些你能够改变的事情。</p>
-<p>注意生物钟的运行规律，按时作息，劳逸结合，这样才能在学习时有最好的状态。</p>
-<p>要保护自己的时间，尤其是需要有足够的时间来做那些“重要事”。</p>
-<p>要找到整块的时间来做自己觉得重要的对自己的成长有利的事情。不要因为帮助别人而把自己宝贵的学习时间占用掉，你要知道时间真的很宝贵。</p>
-<h2 id="列待办或完成事项清单"><a href="#列待办或完成事项清单" class="headerlink" title="列待办或完成事项清单"></a>列待办或完成事项清单</h2><p>著名的GTD（Get Things Done）时间管理法</p>
-<ul>
-<li>收集：把任务从大脑中清出来，形成待办列表</li>
-<li>整理：整理待办任务、分类任务</li>
-<li>组织：下一步行动、形成项目、等待处理、将来处理</li>
-<li>回顾：按日回顾、按周回顾、月回顾来总结GTD系统</li>
-<li>执行：Do it!没什么好说的</li>
-</ul>
-<p>待办事项清单用来提醒你做事情，完成事项清单用来审视你的时间安排。</p>
-<p>待办事项强调目标，而完成事项重在展现成就。当你的满足感开始提升时，你更有力量去坚持下去做你要做的事情。</p>
-<ul>
-<li><p>列待办事项清单<br>每天早上把自己一天该做的事情列出来，并对该做的事情排好优先次序，每天如果遇到新的东西可以再加上去。</p>
-</li>
-<li><p>列完成事项清单<br>第一组：认真回忆并记录今天都做了什么，并注明花费的时间。</p>
-</li>
-</ul>
-<p>第二组：先坚持一星期，每晚记录时间开销再往后坚持。</p>
-<p>第三组：每周或每个月总结这段时间做了什么，进行反思。</p>
-<h2 id="注重提升效率"><a href="#注重提升效率" class="headerlink" title="注重提升效率"></a>注重提升效率</h2><ol>
-<li>提高体力</li>
-<li>做事专注，一次只做一件事情，在做一件事情的时候避免被其他事情分心，最重要的就是手机了。</li>
-</ol>
-<h2 id="利用高效时间"><a href="#利用高效时间" class="headerlink" title="利用高效时间"></a>利用高效时间</h2><p>记住二八法则，让20%的投入产生80%的效益。</p>
-<p>也就是说，要把握一天中20%的精华时间来做自己最关键最重要的事情，或者是早晨或者是中午或者是晚上。</p>
-<p>很多时候我们会遇到没有状态的时候，这个时候可以多从事体育运动，多放松放松，睡个觉，好好休息一下。</p>
-<p>每天总有很多碎片的时间，都不可轻易浪费。不要经常玩手机，可以随身带一本想读的书，或者带一张“To do List(工作备忘)”或“To Think list(思考备忘)”，有时间就拿出来。</p>
-<h2 id="给自己一个合理的最后期限"><a href="#给自己一个合理的最后期限" class="headerlink" title="给自己一个合理的最后期限"></a>给自己一个合理的最后期限</h2><p>在管理时间的时候，最好能够给自己设定一个合理的、略微紧迫的、可以刺激自己不断努力的时间期限。</p>
-<p>完成一项艰难任务的正确打开方式是：</p>
-<ul>
-<li>从Deadline往前推</li>
-<li>分解目标到每一天</li>
-<li>每周一小节确保跟上时间进度</li>
-<li>最终完成任务</li>
-</ul>
-<p>从现在开始做第一步。</p>
-<h1 id="扎克伯格的时间管理"><a href="#扎克伯格的时间管理" class="headerlink" title="扎克伯格的时间管理"></a>扎克伯格的时间管理</h1><ol>
-<li>时间常有,时间在于优先</li>
-<li>时间总会有的：每天只计划4~5小时真正的工作</li>
-<li>当你在状态时，就多干点；不然就好好休息：有时会连着几天不是工作状态，有时再工作状态时却又能天天忙活12小时，这都很正常的。</li>
-<li>重视你的时间，并使其值得重视：你的时间值1000美元每小时，你得动起来。</li>
-<li>不要多任务，这只会消耗注意力；保持专注，一心一用。</li>
-<li>养成工作习惯，并持之以恒，你的身体会适应的。</li>
-<li>在有限的时间内，我们总是非常专注并且有效率。</li>
-<li>进入工作状态的最佳方式就是工作，从小任务开始做起，让工作运转起来。</li>
-<li>迭代工作，期待完美收工会令人窒息：“做完事情，胜过完美收工”Facebook办公室墙壁上贴的箴言。动手做，胜过完美的想象。</li>
-<li>工作时间越长，并不等于效率越高。</li>
-<li>按重要性工作，提高效率。</li>
-<li>有会议就尽早安排，用于准备会议的时间往往都被浪费掉了。</li>
-<li>把会议和沟通（邮件或电话）结合，创造不间断时间：一个小会，也许会毁了一个下午，因为它会把下午撕成两个较小的时间段，以至于啥也干不成。PS：当一个程序员冥思苦想时，不要过去打扰，甚至一句问候都是多余的。</li>
-<li>一整天保持相同的工作环境。在项目和客户之间切换，会效率低。</li>
-<li>工作-效率-工作==高效（番茄工作法）</li>
-<li>把不切实际的任务分割成合理的小任务，只要每天都完成小任务，你就会越来越接近那个大目标了</li>
-<li>从来没有两个任务会有相同的优先级，总会有个更重要，仔细考虑待办事情列表。</li>
-<li>必须清除白天必须完成的那件事是什么。“Only ever work on the thing that will have the biggest impact”只要去做那件有着最大影响的事情。–Jason Cohen</li>
-<li>把任务按时间分段，就能感觉它快被搞定了。</li>
-<li>授权并擅用他人的力量。君子善假于物（人）也，如果某件事其他人也可以做到八成，那就给他做。</li>
-<li>把昨天翻过去，只考虑今天和明天。昨天的全垒打赢不了今天的比赛。-好汉不提当年勇。</li>
-<li>给所有事情都设定一个期限。不要让工作无期限地进行下去。</li>
-<li>针对时间紧或有压力的任务，设置结束时间，万事皆可终结。</li>
-<li>多记，多做笔记。</li>
-<li>进入高效状态后，记下任何分散你注意力的东西比如Google搜索词，灵光乍现的想法、新点子等等。如果你把它们记下来，它就不会再蹦来蹦去了。</li>
-<li>休息，休息一下。</li>
-</ol>
-<hr>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.google.com/2017/10/24/时间管理笔记/" data-id="cj9le19bx000si0jsxbo17xj2" class="article-share-link">分享</a>
-      
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/时间管理/">时间管理</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
- 
-
-
-  
-    <article id="post-git-push时避免重复输入用户名和密码" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/10/24/git-push时避免重复输入用户名和密码/" class="article-date">
-  <time datetime="2017-10-24T05:31:57.000Z" itemprop="datePublished">2017-10-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/24/git-push时避免重复输入用户名和密码/">git push时避免重复输入用户名和密码</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- Table of Contents -->
-        
-        <p>关于如何避免在push时重复输入用户名和密码：<a href="http://www.jianshu.com/p/2800dfbcdc04" target="_blank" rel="external">最新解决</a></p>
-<p>Notes:</p>
-<p>以下指令可能会用到：</p>
-<ol>
-<li>执行以下指令可以在系统文件夹中.gitconfig中看到<code>[credential] helper = store</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config --global credential.helper store</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>2.在改用ssh方式后第一次git push可能会警告，根据警告信息会用到以下指令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global push.default simple</div><div class="line">git push --set-upstream origin master</div></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.google.com/2017/10/24/git-push时避免重复输入用户名和密码/" data-id="cj9le19bi000ci0jsw37xlrxy" class="article-share-link">分享</a>
-      
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git-push-ssh-公钥/">git push,ssh,公钥</a></li></ul>
 
     </footer>
   </div>
@@ -850,6 +932,14 @@
       <ul>
         
           <li>
+            <a href="/2017/11/06/operating-system-04/">操作系统的主要功能</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/06/operating-system-05/">OS结构设计</a>
+          </li>
+        
+          <li>
             <a href="/2017/10/27/10-skills-hard-to-learn/">10-skills-hard-to-learn</a>
           </li>
         
@@ -861,14 +951,6 @@
             <a href="/2017/10/26/barack-obama-s-10-rules-for-success/">barack obama&#39;s 10 rules for success</a>
           </li>
         
-          <li>
-            <a href="/2017/10/26/steve-jobs-s-10-rules-for-success/">steve jobs&#39;s 10 rules for success</a>
-          </li>
-        
-          <li>
-            <a href="/2017/10/26/Mark-Zuckerberg-s-10-rules-for-success/">Mark Zuckerberg&#39;s 10 rules for success </a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -878,7 +960,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title archive">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">16</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">16</span></li></ul>
     </div>
   </div>
 
@@ -886,7 +968,7 @@
   
     
 <div class="widget-wrap">
-    <h3 class="widget-title">Links</h3>
+    <h3 class="widget-title">友情链接</h3>
     <div class="widget">
         <ul>
             

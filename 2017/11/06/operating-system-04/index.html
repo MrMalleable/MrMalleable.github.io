@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>操作系统的主要功能 | The Blog of MrBread</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="处理机管理功能处理机管理的主要功能是：创建和撤销进程，对诸进程的运行进行协调，实现进程之间的信息交换，以及按照一定的算法把处理机分配给进程。  进程控制  为作业创建进程、撤销（终止）已结束的进程，以及控制进程在运行过程中的状态转换。  进程同步  进程互斥方式和进程同步方式。最简单的用于实现进程互斥的机制是为每一个临界资源配置一把锁W,当锁打开时，进程可以对该临界资源进行访问；而当锁关上时，则禁">
+<meta property="og:type" content="article">
+<meta property="og:title" content="操作系统的主要功能">
+<meta property="og:url" content="http://www.google.com/2017/11/06/operating-system-04/index.html">
+<meta property="og:site_name" content="The Blog of MrBread">
+<meta property="og:description" content="处理机管理功能处理机管理的主要功能是：创建和撤销进程，对诸进程的运行进行协调，实现进程之间的信息交换，以及按照一定的算法把处理机分配给进程。  进程控制  为作业创建进程、撤销（终止）已结束的进程，以及控制进程在运行过程中的状态转换。  进程同步  进程互斥方式和进程同步方式。最简单的用于实现进程互斥的机制是为每一个临界资源配置一把锁W,当锁打开时，进程可以对该临界资源进行访问；而当锁关上时，则禁">
+<meta property="og:locale" content="English">
+<meta property="og:updated_time" content="2017-11-06T04:33:40.973Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="操作系统的主要功能">
+<meta name="twitter:description" content="处理机管理功能处理机管理的主要功能是：创建和撤销进程，对诸进程的运行进行协调，实现进程之间的信息交换，以及按照一定的算法把处理机分配给进程。  进程控制  为作业创建进程、撤销（终止）已结束的进程，以及控制进程在运行过程中的状态转换。  进程同步  进程互斥方式和进程同步方式。最简单的用于实现进程互斥的机制是为每一个临界资源配置一把锁W,当锁打开时，进程可以对该临界资源进行访问；而当锁关上时，则禁">
+  
+    <link rel="alternate" href="/notimplemented.html" title="The Blog of MrBread" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/notimplemented.html" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.google.com"></form>
+      </div>
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/about">关于</a>
+        
+      </nav>
+      
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">The Blog of MrBread</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Just for recording everyday lives</a>
+        </h2>
+      
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-operating-system-04" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/06/operating-system-04/" class="article-date">
+  <time datetime="2017-11-05T16:00:00.000Z" itemprop="datePublished">2017-11-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      操作系统的主要功能
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <h3 id="处理机管理功能"><a href="#处理机管理功能" class="headerlink" title="处理机管理功能"></a>处理机管理功能</h3><p>处理机管理的主要功能是：创建和撤销进程，对诸进程的运行进行协调，实现进程之间的信息交换，以及按照一定的算法把处理机分配给进程。</p>
+<ol>
+<li>进程控制</li>
+</ol>
+<p>为作业创建进程、撤销（终止）已结束的进程，以及控制进程在运行过程中的状态转换。</p>
+<ol>
+<li>进程同步</li>
+</ol>
+<p>进程互斥方式和进程同步方式。最简单的用于实现进程互斥的机制是为每一个临界资源配置一把锁W,当锁打开时，进程可以对该临界资源进行访问；而当锁关上时，则禁止进程访问该临界资源。而实现进程同步时，最常用的机制就是信号量机制。</p>
+<ol>
+<li>进程通信</li>
+</ol>
+<p>当相互合作的进程处于同一计算机系统时，通常在它们之间采用直接通信方式，即由源进程利用发送命令直接将消息(message)挂到目标进程的消息队列上，以后由目标进程利用接收命令从其消息队列中取出消息。</p>
+<ol>
+<li>调度</li>
+</ol>
+<p>（1）作业调度。 作业调度的基本任务是从后备队列中按照一定的算法选择若干个作业，为它们分配运行所需的资源，在将这些作业调入内存后，分别为它们建立进程，使它们都成为可能获得处理机的就绪进程，并将他们插入到就绪队列中。</p>
+<p>（2）进程调度。 进程调度的任务是从进程的就绪队列中按照一定的算法选出一个进程，将处理机分配给它，并为它设置运行现场，使其投入执行。</p>
+<h3 id="存储器管理功能"><a href="#存储器管理功能" class="headerlink" title="存储器管理功能"></a>存储器管理功能</h3><p>存储器管理的主要任务，是为多道程序的运行提供良好的环境，提高存储器的利用率，方便用户使用，并能从逻辑上扩充内存。为此，存储器管理应具有内存分配和回收、内存保护、地址映射和内存扩充等功能。</p>
+<ol>
+<li>内存分配</li>
+</ol>
+<p>主要任务：</p>
+<ul>
+<li>为每道程序分配内存空间，使它们“各得其所”。</li>
+<li>提高存储的利用率，尽量减少不可用的内存空间（碎片）。</li>
+<li>允许正在运行的程序申请附加的内存空间，以适应程序和数据动态增长的需要。</li>
+</ul>
+<p>OS在实现内存分配时，可采取静态和动态两种方式：</p>
+<ul>
+<li>静态分配方式。每个作业的内存空间是在作业装入时确定的，在作业装入后的整个运行期间不允许作业再申请新的内存空间，也不允许作业在内存中“移动”。</li>
+<li>动态分配方式。每个作业所要求的基本内存空间虽然也是在装入时确定的，但允许作业在运行过程中继续申请新的附加内存空间，以适应程序和数据的动态增长，也允许作业在内存中“移动”。</li>
+</ul>
+<ol>
+<li>内存保护</li>
+</ol>
+<p>内存保护的主要任务是：（1）确保每道用户程序都仅在自己的内存空间内运行，彼此互不干扰。（2）决不允许用户程序访问操作系统的程序和数据，也不允许用户程序转移到非共享的其它用户程序中执行。</p>
+<p>一种比较简单的内存保护机制是设置两个界限寄存器，分别用于存放正在执行程序的上界和下届。在程序运行时，系统须对每条指令所要访问的地址进行检查，如果发生越界，使发出越界中断请求，以停止该程序的执行。</p>
+<ol>
+<li><p>地址映射<br>在多道程序环境中，由于每道程序编译和链接后所形成的可装入程序其地址都是从0开始的，但不可能将它们从”0”地址（物理）开始装入内存，致使（各程序段）地址空间内的逻辑地址与其在内存空间中的物理地址并不相一致。为保证程序正确进行，存储器管理必须地址映射功能，即能够将地址空间中的逻辑地址转换为内存空间中与之对应的物理地址。<strong>该功能应在硬件的支持下完成。</strong></p>
+</li>
+<li><p>内存扩充</p>
+</li>
+</ol>
+<ul>
+<li>请求调入功能，系统允许在仅装入部分用户程序和数据的情况下，便能启动该程序运行。在程序运行过程中共，若发现要继续运行时所需的程序和数据尚未装入内存，可向OS发出请求，由OS从磁盘中将所需部分调入内存，以便继续运行。</li>
+<li>置换功能，若发现在内存中已无足够的空间来装入需要调入的程序和数据时，系统应能将内存中的一部分暂时不用的程序和数据调至硬盘上，以腾出内存空间，然后再将所需调入的部分装入内存。</li>
+</ul>
+<h3 id="设备管理功能"><a href="#设备管理功能" class="headerlink" title="设备管理功能"></a>设备管理功能</h3><p>设备管理的主要任务如下：<br>(1)完成用户进程提出的I/O请求，为用户进程分配所需的I/O设备，并完成指定的I/O操作。</p>
+<p>(2)提高CPU和I/O设备的利用率，提高I/O速度，方便用户使用I/O设备。</p>
+<ol>
+<li>缓冲管理</li>
+</ol>
+<p>最常见的缓冲区机制有：<strong>单缓冲机制、能够实现双向同时传送数据的双缓冲机制、能供多个设备同时使用的公共缓冲池机制。</strong></p>
+<ol>
+<li>设备分配</li>
+</ol>
+<p>为实现设备分配，系统中应设置设备控制表、控制器控制表等数据结构，用于记录设备及控制器等的标识符和状态。</p>
+<ol>
+<li>设备处理</li>
+</ol>
+<p>设备处理过程是：首先检查I/O请求的合法性，了解设备状态是否是空闲的，读取有关的传递参数及设置设备的工作方式。然后向设备控制器发出I/O命令，启动I/O设备完成指定的I/O操作。此外设备驱动程序还应能及时响应由控制器发来的中断请求，并根据该终端请求的类型，调用相应的中断处理程序进行处理。对于设置了通道的计算机系统，设备处理程序还应能根据用户的I/O请求自动地构成通道程序。</p>
+<h3 id="文件管理功能"><a href="#文件管理功能" class="headerlink" title="文件管理功能"></a>文件管理功能</h3><ol>
+<li>文件存储空间的管理。</li>
+<li>目录管理。</li>
+<li>文件的读写管理和保护</li>
+</ol>
+<h3 id="操作系统与用户之间的接口"><a href="#操作系统与用户之间的接口" class="headerlink" title="操作系统与用户之间的接口"></a>操作系统与用户之间的接口</h3><ol>
+<li>用户接口<br>（1）联机用户接口<br>（2）脱机用户接口<br>（3）图形用户接口</li>
+<li>程序接口</li>
+</ol>
+<h3 id="现代操作系统的新功能"><a href="#现代操作系统的新功能" class="headerlink" title="现代操作系统的新功能"></a>现代操作系统的新功能</h3><ol>
+<li>系统安全<ul>
+<li>认证技术</li>
+<li>密码技术</li>
+<li>访问控制技术</li>
+<li>反病毒技术</li>
+</ul>
+</li>
+<li>网络的功能和服务<ul>
+<li>网络通信</li>
+<li>资源管理</li>
+<li>应用互操作</li>
+</ul>
+</li>
+<li>支持多媒体<ul>
+<li>接纳控制功能</li>
+<li>实时调度</li>
+<li>多媒体文件存储</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p>end</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.google.com/2017/11/06/operating-system-04/" data-id="cj9npvjb90009x0jsttkbmguy" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+ <script src="/jquery/jquery.min.js"></script>
+  <div id="random_posts">
+    <h2>推荐文章</h2>
+    <div class="random_posts_ul">
+      <script>
+          var random_count =4
+          var site = {BASE_URI:'/'};
+          function load_random_posts(obj) {
+              var arr=site.posts;
+              if (!obj) return;
+              // var count = $(obj).attr('data-count') || 6;
+              for (var i, tmp, n = arr.length; n; i = Math.floor(Math.random() * n), tmp = arr[--n], arr[n] = arr[i], arr[i] = tmp);
+              arr = arr.slice(0, random_count);
+              var html = '<ul>';
+            
+              for(var j=0;j<arr.length;j++){
+                var item=arr[j];
+                html += '<li><strong>' + 
+                item.date + ':&nbsp;&nbsp;<a href="' + (site.BASE_URI+item.uri) + '">' + 
+                (item.title || item.uri) + '</a></strong>';
+                if(item.excerpt){
+                  html +='<div class="post-excerpt">'+item.excerpt+'</div>';
+                }
+                html +='</li>';
+                
+              }
+              $(obj).html(html + '</ul>');
+          }
+          $('.random_posts_ul').each(function () {
+              var c = this;
+              if (!site.posts || !site.posts.length){
+                  $.getJSON(site.BASE_URI + 'js/posts.js',function(json){site.posts = json;load_random_posts(c)});
+              } 
+               else{
+                load_random_posts(c);
+              }
+          });
+      </script>
+    </div>
+  </div>
+
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/11/06/operating-system-05/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">OS结构设计</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+ 
+     
+  <div class="comments" id="comments">
+    
+     
+       
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+       
+      
+      
+  </div>
+ 
+  
+
+</section>
+           
+    <aside id="sidebar">
+  
+    
+
+  
+    
+    <div class="widget-wrap">
+    
+      <div class="widget" id="toc-widget-fixed">
+      
+        <strong class="toc-title">文章目录</strong>
+        <div class="toc-widget-list">
+              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#处理机管理功能"><span class="toc-number">1.</span> <span class="toc-text">处理机管理功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#存储器管理功能"><span class="toc-number">2.</span> <span class="toc-text">存储器管理功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设备管理功能"><span class="toc-number">3.</span> <span class="toc-text">设备管理功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件管理功能"><span class="toc-number">4.</span> <span class="toc-text">文件管理功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作系统与用户之间的接口"><span class="toc-number">5.</span> <span class="toc-text">操作系统与用户之间的接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#现代操作系统的新功能"><span class="toc-number">6.</span> <span class="toc-text">现代操作系统的新功能</span></a></li></ol>
+          </div>
+      </div>
+    </div>
+
+  
+    
+
+  
+    
+  
+    
+  
+    
+
+  
+    
+  
+</aside>
+
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-left">
+      &copy; 2014 - 2017 MrBread&nbsp;|&nbsp;
+      主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
+    </div>
+     <div id="footer-right">
+      联系方式&nbsp;|&nbsp;970014590@qq.com
+    </div>
+  </div>
+</footer>
+ <script src="/jquery/jquery.min.js"></script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/about" class="mobile-nav-link">关于</a>
+  
+</nav>
+    <img class="back-to-top-btn" src="/images/fly-to-top.png"/>
+<script>
+// Elevator script included on the page, already.
+window.onload = function() {
+  var elevator = new Elevator({
+    selector:'.back-to-top-btn',
+    element: document.querySelector('.back-to-top-btn'),
+    duration: 1000 // milliseconds
+  });
+}
+</script>
+      
+
+  
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "e2fb4051c49842688ce669e634bc983f",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+    
+
+  
+
+
+
+
+
+
+
+<!-- author:forvoid begin -->
+<!-- author:forvoid begin -->
+
+<!-- author:forvoid end -->
+
+<!-- author:forvoid end -->
+
+
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      })
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      })
+    </script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+ <script src="/js/is.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/elevator.js"></script>
+  </div>
+</body>
+</html>

@@ -3,20 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>windows下git-bash无法修改权限 | The Blog of MrBread</title>
+  <title>OS结构设计 | The Blog of MrBread</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前天在windows10下面打开git bash命令行，创建一个脚本hexo.sh发现执行以下指令： 1chmod 755 hexo.sh 之后使用ls -al hexo.sh查看文件的权限时发现并没有可执行权限。 故google之。 解决帖 主要原因因为windows使用的是NTFS或者FAT32文件系统，所以并不支持像unix系统那样可以修改可执行权限的操作。 windows下主要是根据文件名">
-<meta name="keywords" content="git bash,#!&#x2F;bin&#x2F;bash">
+  <meta name="description" content="传统操作系统结构 无结构操作系统 模块化结构OS 模块化程序设计技术的基本概念 模块独立性 模块接口法的优缺点   分层是结构OS 分层式结构的基本概念 分层结构的优缺点    客户/服务器模式(Client/Server Model简介) 客户/服务器模式的由来、组成和类型 客户与服务器之间的交互 客户发送请求消息 服务器接收消息 服务器回送消息 客户机接收消息   客户/服务器模式的优点 数据">
 <meta property="og:type" content="article">
-<meta property="og:title" content="windows下git-bash无法修改权限">
-<meta property="og:url" content="http://www.google.com/2017/10/26/windows下git-bash无法修改权限/index.html">
+<meta property="og:title" content="OS结构设计">
+<meta property="og:url" content="http://www.google.com/2017/11/06/operating-system-05/index.html">
 <meta property="og:site_name" content="The Blog of MrBread">
-<meta property="og:description" content="前天在windows10下面打开git bash命令行，创建一个脚本hexo.sh发现执行以下指令： 1chmod 755 hexo.sh 之后使用ls -al hexo.sh查看文件的权限时发现并没有可执行权限。 故google之。 解决帖 主要原因因为windows使用的是NTFS或者FAT32文件系统，所以并不支持像unix系统那样可以修改可执行权限的操作。 windows下主要是根据文件名">
+<meta property="og:description" content="传统操作系统结构 无结构操作系统 模块化结构OS 模块化程序设计技术的基本概念 模块独立性 模块接口法的优缺点   分层是结构OS 分层式结构的基本概念 分层结构的优缺点    客户/服务器模式(Client/Server Model简介) 客户/服务器模式的由来、组成和类型 客户与服务器之间的交互 客户发送请求消息 服务器接收消息 服务器回送消息 客户机接收消息   客户/服务器模式的优点 数据">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2017-10-26T02:48:38.875Z">
+<meta property="og:updated_time" content="2017-11-06T04:58:29.811Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="windows下git-bash无法修改权限">
-<meta name="twitter:description" content="前天在windows10下面打开git bash命令行，创建一个脚本hexo.sh发现执行以下指令： 1chmod 755 hexo.sh 之后使用ls -al hexo.sh查看文件的权限时发现并没有可执行权限。 故google之。 解决帖 主要原因因为windows使用的是NTFS或者FAT32文件系统，所以并不支持像unix系统那样可以修改可执行权限的操作。 windows下主要是根据文件名">
+<meta name="twitter:title" content="OS结构设计">
+<meta name="twitter:description" content="传统操作系统结构 无结构操作系统 模块化结构OS 模块化程序设计技术的基本概念 模块独立性 模块接口法的优缺点   分层是结构OS 分层式结构的基本概念 分层结构的优缺点    客户/服务器模式(Client/Server Model简介) 客户/服务器模式的由来、组成和类型 客户与服务器之间的交互 客户发送请求消息 服务器接收消息 服务器回送消息 客户机接收消息   客户/服务器模式的优点 数据">
   
     <link rel="alternate" href="/notimplemented.html" title="The Blog of MrBread" type="application/atom+xml">
   
@@ -73,10 +72,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-windows下git-bash无法修改权限" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-operating-system-05" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/10/26/windows下git-bash无法修改权限/" class="article-date">
-  <time datetime="2017-10-26T02:35:06.000Z" itemprop="datePublished">2017-10-26</time>
+    <a href="/2017/11/06/operating-system-05/" class="article-date">
+  <time datetime="2017-11-05T16:00:00.000Z" itemprop="datePublished">2017-11-06</time>
 </a>
     
   </div>
@@ -87,7 +86,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      windows下git-bash无法修改权限
+      OS结构设计
     </h1>
   
 
@@ -97,34 +96,88 @@
       
         <!-- Table of Contents -->
         
-        <p>前天在windows10下面打开git bash命令行，创建一个脚本hexo.sh发现执行以下指令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod 755 hexo.sh</div></pre></td></tr></table></figure>
-<p>之后使用<code>ls -al hexo.sh</code>查看文件的权限时发现并没有可执行权限。</p>
-<p>故google之。</p>
-<p><a href="https://stackoverflow.com/questions/25730041/updating-file-permissions-with-git-bash-on-windows-7" target="_blank" rel="external">解决帖</a></p>
-<h3 id="主要原因"><a href="#主要原因" class="headerlink" title="主要原因"></a><strong>主要原因</strong></h3><p>因为windows使用的是NTFS或者FAT32文件系统，所以并不支持像unix系统那样可以修改可执行权限的操作。</p>
-<p>windows下主要是根据文件名字或者内容来判断是否可执行。</p>
-<ol>
-<li><strong>常用的可执行文件的后缀有：<em>.com、.bat、.exe</em></strong></li>
-<li>文件中以#!开头，例如#!/bin/bash</li>
+        <h3 id="传统操作系统结构"><a href="#传统操作系统结构" class="headerlink" title="传统操作系统结构"></a>传统操作系统结构</h3><ol>
+<li>无结构操作系统</li>
+<li>模块化结构OS<ul>
+<li>模块化程序设计技术的基本概念</li>
+<li>模块独立性</li>
+<li>模块接口法的优缺点</li>
+</ul>
+</li>
+<li>分层是结构OS<ul>
+<li>分层式结构的基本概念</li>
+<li>分层结构的优缺点</li>
+</ul>
+</li>
 </ol>
-<hr>
-<p>在windows下的git bash下面如果一个文件是可执行的，可以看到该文件名是绿色，并且后面还会加上一个*号.</p>
-<p>设置好hexo.sh脚本之后就可以简化使用hexo发表博客的流程了。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">#!/bin/bash</div><div class="line">hexo new $1</div><div class="line">if [ $? == 0 ]</div><div class="line">then</div><div class="line">   cd source/_posts/</div><div class="line">   vim $1\.md</div><div class="line">   hexo generate</div><div class="line">   hexo deploy</div><div class="line">else</div><div class="line">   echo &quot;创建新文章失败&quot;</div><div class="line">fi</div></pre></td></tr></table></figure>
-<p>例如：创建题为test.md的新博客<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./hexo.sh test</div></pre></td></tr></table></figure></p>
+<h3 id="客户-服务器模式-Client-Server-Model简介"><a href="#客户-服务器模式-Client-Server-Model简介" class="headerlink" title="客户/服务器模式(Client/Server Model简介)"></a>客户/服务器模式(Client/Server Model简介)</h3><ol>
+<li>客户/服务器模式的由来、组成和类型</li>
+<li>客户与服务器之间的交互<ul>
+<li>客户发送请求消息</li>
+<li>服务器接收消息</li>
+<li>服务器回送消息</li>
+<li>客户机接收消息</li>
+</ul>
+</li>
+<li>客户/服务器模式的优点<ul>
+<li>数据的分布式处理和存储</li>
+<li>便于集中管理</li>
+<li>灵活性和可扩充性</li>
+<li>易于改编应用软件<br>基本客户/服务器模式的不足之处是存在着不可靠性和瓶颈问题。在系统仅有一个服务器时，一旦服务器故障，将导致整个网络瘫痪。当服务器在重负荷下工作时，会因忙不过来而显著地延长对用户请求的响应时间。如果在网络中配置多个服务器，并采取相应的安全措施，则这种不足可加以改善。</li>
+</ul>
+</li>
+</ol>
+<h3 id="面向对象的程序设计-Object-Oriented-Programming-技术简介"><a href="#面向对象的程序设计-Object-Oriented-Programming-技术简介" class="headerlink" title="面向对象的程序设计(Object-Oriented Programming)技术简介"></a>面向对象的程序设计(Object-Oriented Programming)技术简介</h3><ol>
+<li>面向对象技术的基本概念</li>
+</ol>
+<p>抽象和隐蔽两大原则。</p>
+<ol>
+<li>面向技术的优点<ul>
+<li>通过“重用”提高产品质量和生产率</li>
+<li>使系统具有更好的易修改性和易扩展性</li>
+<li>更易于保证系统的“正确性”和“可靠性”</li>
+</ul>
+</li>
+</ol>
+<h3 id="微内核OS结构"><a href="#微内核OS结构" class="headerlink" title="微内核OS结构"></a>微内核OS结构</h3><ol>
+<li><p>微内核操作系统的基本概念</p>
+<ul>
+<li>足够小的内核</li>
+<li>基于客户/服务器模式</li>
+<li>应用“机制与策略分离”原理</li>
+<li>采用面向对象技术</li>
+</ul>
+</li>
+<li><p>微内核的基本功能</p>
+<ul>
+<li>进程（线程）管理</li>
+<li>低级存储器管理</li>
+<li>中断和陷入处理</li>
+</ul>
+</li>
+<li><p>微内核操作系统的优点</p>
+<ul>
+<li>提高了系统的可扩展性</li>
+<li>增强了系统的可靠性</li>
+<li>可移植性强</li>
+<li>提供了对分布式系统的支持</li>
+<li>融入了面向对象技术</li>
+</ul>
+</li>
+<li><p>微内核操作系统存在的问题</p>
+</li>
+</ol>
+<p>效率降低最主要的原因是，在完成一次客户对操作系统提出的服务请求时，需要利用消息实现多次交互和进行用户/内核模式与上下文的多次切换。然而，在早期的OS中，用户进程在请求取得OS服务时，一般只需进行两次上下文的切换：一次是在执行系统调用后由用户态专项系统态时；另一次是在系统完成用户请求的服务后，由系统态返回用户态时。</p>
 <hr>
 <p>end</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.google.com/2017/10/26/windows下git-bash无法修改权限/" data-id="cj9npvjbp000mx0js3zxla45i" class="article-share-link">分享</a>
+      <a data-url="http://www.google.com/2017/11/06/operating-system-05/" data-id="cj9npvjbp000bx0jsy0iuv3ez" class="article-share-link">分享</a>
       
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git-bash-bin-bash/">git bash,#!/bin/bash</a></li></ul>
-
     </footer>
   </div>
   
@@ -173,19 +226,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/10/27/10-skills-hard-to-learn/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/11/06/operating-system-04/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">上一篇</strong>
       <div class="article-nav-title">
         
-          10-skills-hard-to-learn
+          操作系统的主要功能
         
       </div>
     </a>
   
   
-    <a href="/2017/10/26/barack-obama-s-10-rules-for-success/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/10/27/10-skills-hard-to-learn/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">barack obama&#39;s 10 rules for success</div>
+      <div class="article-nav-title">10-skills-hard-to-learn</div>
     </a>
   
 </nav>
@@ -221,7 +274,7 @@
       
         <strong class="toc-title">文章目录</strong>
         <div class="toc-widget-list">
-              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#主要原因"><span class="toc-number">1.</span> <span class="toc-text">主要原因</span></a></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#传统操作系统结构"><span class="toc-number">1.</span> <span class="toc-text">传统操作系统结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#客户-服务器模式-Client-Server-Model简介"><span class="toc-number">2.</span> <span class="toc-text">客户/服务器模式(Client/Server Model简介)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面向对象的程序设计-Object-Oriented-Programming-技术简介"><span class="toc-number">3.</span> <span class="toc-text">面向对象的程序设计(Object-Oriented Programming)技术简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#微内核OS结构"><span class="toc-number">4.</span> <span class="toc-text">微内核OS结构</span></a></li></ol>
           </div>
       </div>
     </div>
