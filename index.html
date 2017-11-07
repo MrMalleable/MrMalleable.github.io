@@ -41,7 +41,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/notimplemented.html" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.google.com"></form>
@@ -72,6 +72,120 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-operating-system-05" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/06/operating-system-05/" class="article-date">
+  <time datetime="2017-11-05T16:00:00.000Z" itemprop="datePublished">2017-11-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/06/operating-system-05/">OS结构设计</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <h3 id="传统操作系统结构"><a href="#传统操作系统结构" class="headerlink" title="传统操作系统结构"></a>传统操作系统结构</h3><ol>
+<li>无结构操作系统</li>
+<li>模块化结构OS<ul>
+<li>模块化程序设计技术的基本概念</li>
+<li>模块独立性</li>
+<li>模块接口法的优缺点</li>
+</ul>
+</li>
+<li>分层是结构OS<ul>
+<li>分层式结构的基本概念</li>
+<li>分层结构的优缺点</li>
+</ul>
+</li>
+</ol>
+<h3 id="客户-服务器模式-Client-Server-Model简介"><a href="#客户-服务器模式-Client-Server-Model简介" class="headerlink" title="客户/服务器模式(Client/Server Model简介)"></a>客户/服务器模式(Client/Server Model简介)</h3><ol>
+<li>客户/服务器模式的由来、组成和类型</li>
+<li>客户与服务器之间的交互<ul>
+<li>客户发送请求消息</li>
+<li>服务器接收消息</li>
+<li>服务器回送消息</li>
+<li>客户机接收消息</li>
+</ul>
+</li>
+<li>客户/服务器模式的优点<ul>
+<li>数据的分布式处理和存储</li>
+<li>便于集中管理</li>
+<li>灵活性和可扩充性</li>
+<li>易于改编应用软件<br>基本客户/服务器模式的不足之处是存在着不可靠性和瓶颈问题。在系统仅有一个服务器时，一旦服务器故障，将导致整个网络瘫痪。当服务器在重负荷下工作时，会因忙不过来而显著地延长对用户请求的响应时间。如果在网络中配置多个服务器，并采取相应的安全措施，则这种不足可加以改善。</li>
+</ul>
+</li>
+</ol>
+<h3 id="面向对象的程序设计-Object-Oriented-Programming-技术简介"><a href="#面向对象的程序设计-Object-Oriented-Programming-技术简介" class="headerlink" title="面向对象的程序设计(Object-Oriented Programming)技术简介"></a>面向对象的程序设计(Object-Oriented Programming)技术简介</h3><ol>
+<li>面向对象技术的基本概念</li>
+</ol>
+<p>抽象和隐蔽两大原则。</p>
+<ol>
+<li>面向技术的优点<ul>
+<li>通过“重用”提高产品质量和生产率</li>
+<li>使系统具有更好的易修改性和易扩展性</li>
+<li>更易于保证系统的“正确性”和“可靠性”</li>
+</ul>
+</li>
+</ol>
+<h3 id="微内核OS结构"><a href="#微内核OS结构" class="headerlink" title="微内核OS结构"></a>微内核OS结构</h3><ol>
+<li><p>微内核操作系统的基本概念</p>
+<ul>
+<li>足够小的内核</li>
+<li>基于客户/服务器模式</li>
+<li>应用“机制与策略分离”原理</li>
+<li>采用面向对象技术</li>
+</ul>
+</li>
+<li><p>微内核的基本功能</p>
+<ul>
+<li>进程（线程）管理</li>
+<li>低级存储器管理</li>
+<li>中断和陷入处理</li>
+</ul>
+</li>
+<li><p>微内核操作系统的优点</p>
+<ul>
+<li>提高了系统的可扩展性</li>
+<li>增强了系统的可靠性</li>
+<li>可移植性强</li>
+<li>提供了对分布式系统的支持</li>
+<li>融入了面向对象技术</li>
+</ul>
+</li>
+<li><p>微内核操作系统存在的问题</p>
+</li>
+</ol>
+<p>效率降低最主要的原因是，在完成一次客户对操作系统提出的服务请求时，需要利用消息实现多次交互和进行用户/内核模式与上下文的多次切换。然而，在早期的OS中，用户进程在请求取得OS服务时，一般只需进行两次上下文的切换：一次是在执行系统调用后由用户态专项系统态时；另一次是在系统完成用户请求的服务后，由系统态返回用户态时。</p>
+<hr>
+<p>end</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.google.com/2017/11/06/operating-system-05/" data-id="cj9pi6kzu000sxcjscbqxex42" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+ 
+
+
   
     <article id="post-operating-system-04" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -195,121 +309,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.google.com/2017/11/06/operating-system-04/" data-id="cj9npvjb90009x0jsttkbmguy" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
- 
-
-
-  
-    <article id="post-operating-system-05" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/11/06/operating-system-05/" class="article-date">
-  <time datetime="2017-11-05T16:00:00.000Z" itemprop="datePublished">2017-11-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/06/operating-system-05/">OS结构设计</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- Table of Contents -->
-        
-        <h3 id="传统操作系统结构"><a href="#传统操作系统结构" class="headerlink" title="传统操作系统结构"></a>传统操作系统结构</h3><ol>
-<li>无结构操作系统</li>
-<li>模块化结构OS<ul>
-<li>模块化程序设计技术的基本概念</li>
-<li>模块独立性</li>
-<li>模块接口法的优缺点</li>
-</ul>
-</li>
-<li>分层是结构OS<ul>
-<li>分层式结构的基本概念</li>
-<li>分层结构的优缺点</li>
-</ul>
-</li>
-</ol>
-<h3 id="客户-服务器模式-Client-Server-Model简介"><a href="#客户-服务器模式-Client-Server-Model简介" class="headerlink" title="客户/服务器模式(Client/Server Model简介)"></a>客户/服务器模式(Client/Server Model简介)</h3><ol>
-<li>客户/服务器模式的由来、组成和类型</li>
-<li>客户与服务器之间的交互<ul>
-<li>客户发送请求消息</li>
-<li>服务器接收消息</li>
-<li>服务器回送消息</li>
-<li>客户机接收消息</li>
-</ul>
-</li>
-<li>客户/服务器模式的优点<ul>
-<li>数据的分布式处理和存储</li>
-<li>便于集中管理</li>
-<li>灵活性和可扩充性</li>
-<li>易于改编应用软件<br>基本客户/服务器模式的不足之处是存在着不可靠性和瓶颈问题。在系统仅有一个服务器时，一旦服务器故障，将导致整个网络瘫痪。当服务器在重负荷下工作时，会因忙不过来而显著地延长对用户请求的响应时间。如果在网络中配置多个服务器，并采取相应的安全措施，则这种不足可加以改善。</li>
-</ul>
-</li>
-</ol>
-<h3 id="面向对象的程序设计-Object-Oriented-Programming-技术简介"><a href="#面向对象的程序设计-Object-Oriented-Programming-技术简介" class="headerlink" title="面向对象的程序设计(Object-Oriented Programming)技术简介"></a>面向对象的程序设计(Object-Oriented Programming)技术简介</h3><ol>
-<li>面向对象技术的基本概念</li>
-</ol>
-<p>抽象和隐蔽两大原则。</p>
-<ol>
-<li>面向技术的优点<ul>
-<li>通过“重用”提高产品质量和生产率</li>
-<li>使系统具有更好的易修改性和易扩展性</li>
-<li>更易于保证系统的“正确性”和“可靠性”</li>
-</ul>
-</li>
-</ol>
-<h3 id="微内核OS结构"><a href="#微内核OS结构" class="headerlink" title="微内核OS结构"></a>微内核OS结构</h3><ol>
-<li><p>微内核操作系统的基本概念</p>
-<ul>
-<li>足够小的内核</li>
-<li>基于客户/服务器模式</li>
-<li>应用“机制与策略分离”原理</li>
-<li>采用面向对象技术</li>
-</ul>
-</li>
-<li><p>微内核的基本功能</p>
-<ul>
-<li>进程（线程）管理</li>
-<li>低级存储器管理</li>
-<li>中断和陷入处理</li>
-</ul>
-</li>
-<li><p>微内核操作系统的优点</p>
-<ul>
-<li>提高了系统的可扩展性</li>
-<li>增强了系统的可靠性</li>
-<li>可移植性强</li>
-<li>提供了对分布式系统的支持</li>
-<li>融入了面向对象技术</li>
-</ul>
-</li>
-<li><p>微内核操作系统存在的问题</p>
-</li>
-</ol>
-<p>效率降低最主要的原因是，在完成一次客户对操作系统提出的服务请求时，需要利用消息实现多次交互和进行用户/内核模式与上下文的多次切换。然而，在早期的OS中，用户进程在请求取得OS服务时，一般只需进行两次上下文的切换：一次是在执行系统调用后由用户态专项系统态时；另一次是在系统完成用户请求的服务后，由系统态返回用户态时。</p>
-<hr>
-<p>end</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.google.com/2017/11/06/operating-system-05/" data-id="cj9npvjbp000bx0jsy0iuv3ez" class="article-share-link">分享</a>
+      <a data-url="http://www.google.com/2017/11/06/operating-system-04/" data-id="cj9pi6kzs000rxcjs43atqzth" class="article-share-link">Share</a>
       
       
       
@@ -363,7 +363,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.google.com/2017/10/27/10-skills-hard-to-learn/" data-id="cj9npvjae0001x0js59xejfui" class="article-share-link">分享</a>
+      <a data-url="http://www.google.com/2017/10/27/10-skills-hard-to-learn/" data-id="cj9pi6kyz0003xcjskko186xz" class="article-share-link">Share</a>
       
       
       
@@ -423,7 +423,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.google.com/2017/10/26/windows下git-bash无法修改权限/" data-id="cj9npvjbp000mx0js3zxla45i" class="article-share-link">分享</a>
+      <a data-url="http://www.google.com/2017/10/26/windows下git-bash无法修改权限/" data-id="cj9pi6kzp000nxcjsm5kltlov" class="article-share-link">Share</a>
       
       
       
@@ -482,7 +482,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.google.com/2017/10/26/barack-obama-s-10-rules-for-success/" data-id="cj9npvjb90008x0jszk2nm5yu" class="article-share-link">分享</a>
+      <a data-url="http://www.google.com/2017/10/26/barack-obama-s-10-rules-for-success/" data-id="cj9pi6kzd000bxcjskvjiv26j" class="article-share-link">Share</a>
       
       
       
@@ -538,7 +538,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.google.com/2017/10/26/steve-jobs-s-10-rules-for-success/" data-id="cj9npvjbp000jx0jsbh6jw9px" class="article-share-link">分享</a>
+      <a data-url="http://www.google.com/2017/10/26/steve-jobs-s-10-rules-for-success/" data-id="cj9pi6kzn000lxcjsni8f2lya" class="article-share-link">Share</a>
       
       
       
@@ -594,7 +594,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.google.com/2017/10/26/Mark-Zuckerberg-s-10-rules-for-success/" data-id="cj9npvj9j0000x0jsvlkco9h6" class="article-share-link">分享</a>
+      <a data-url="http://www.google.com/2017/10/26/Mark-Zuckerberg-s-10-rules-for-success/" data-id="cj9pi6kw40000xcjs8be65gdb" class="article-share-link">Share</a>
       
       
       
@@ -641,7 +641,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.google.com/2017/10/25/删除重复的包/" data-id="cj9npvjbp000px0jsg6enqj5v" class="article-share-link">分享</a>
+      <a data-url="http://www.google.com/2017/10/25/删除重复的包/" data-id="cj9pi6kzr000pxcjsm2tjcqg1" class="article-share-link">Share</a>
       
       
       
@@ -775,7 +775,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.google.com/2017/10/25/奇特的一生读书笔记/" data-id="cj9npvjdf0018x0jsrwlyjy97" class="article-share-link">分享</a>
+      <a data-url="http://www.google.com/2017/10/25/奇特的一生读书笔记/" data-id="cj9pi6kzx000wxcjshqeeo3sj" class="article-share-link">Share</a>
       
       
       
@@ -865,7 +865,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.google.com/2017/10/25/operating-system-03/" data-id="cj9npvjbp000lx0jsdd9qhq8r" class="article-share-link">分享</a>
+      <a data-url="http://www.google.com/2017/10/25/operating-system-03/" data-id="cj9pi6kzm000jxcjswg51kjvy" class="article-share-link">Share</a>
       
       
       
@@ -882,7 +882,7 @@
 
 
   <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页&raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next&raquo;</a>
   </nav>
 </section>
            
@@ -918,7 +918,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title tagcloud">标签云</h3>
+    <h3 class="widget-title tagcloud">Tag Cloud</h3>
     <div class="widget tagcloud">
       <a href="/tags/10-rules-for-success-乔布斯/" style="font-size: 14px;">10 rules for success,乔布斯</a> <a href="/tags/Build-blog-system-using-hexo/" style="font-size: 14px;">Build blog system using hexo</a> <a href="/tags/centos-7-linux-package-cleanup/" style="font-size: 14px;">centos 7,linux,package-cleanup</a> <a href="/tags/git-bash-bin-bash/" style="font-size: 14px;">git bash,#!/bin/bash</a> <a href="/tags/git-push-ssh-公钥/" style="font-size: 14px;">git push,ssh,公钥</a> <a href="/tags/hard-tasks/" style="font-size: 14px;">hard tasks</a> <a href="/tags/hexo-theme-cafe/" style="font-size: 14px;">hexo-theme-cafe</a> <a href="/tags/hexo相关设置/" style="font-size: 14px;">hexo相关设置</a> <a href="/tags/reading-skills/" style="font-size: 14px;">reading skills</a> <a href="/tags/rules-for-success-行动最重要/" style="font-size: 14px;">rules for success,行动最重要</a> <a href="/tags/奥巴马谈成功/" style="font-size: 14px;">奥巴马谈成功</a> <a href="/tags/操作系统发展过程/" style="font-size: 14px;">操作系统发展过程</a> <a href="/tags/操作系统导论/" style="font-size: 14px;">操作系统导论</a> <a href="/tags/操作系统的基本特性/" style="font-size: 14px;">操作系统的基本特性</a> <a href="/tags/时间管理/" style="font-size: 14px;">时间管理</a> <a href="/tags/时间统计法，记录/" style="font-size: 14px;">时间统计法，记录</a>
     </div>
@@ -927,16 +927,16 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title recent-posts">最新文章</h3>
+    <h3 class="widget-title recent-posts">Recent Posts</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2017/11/06/operating-system-04/">操作系统的主要功能</a>
+            <a href="/2017/11/06/operating-system-05/">OS结构设计</a>
           </li>
         
           <li>
-            <a href="/2017/11/06/operating-system-05/">OS结构设计</a>
+            <a href="/2017/11/06/operating-system-04/">操作系统的主要功能</a>
           </li>
         
           <li>
@@ -958,7 +958,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title archive">归档</h3>
+    <h3 class="widget-title archive">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">16</span></li></ul>
     </div>
@@ -968,7 +968,7 @@
   
     
 <div class="widget-wrap">
-    <h3 class="widget-title">友情链接</h3>
+    <h3 class="widget-title">Links</h3>
     <div class="widget">
         <ul>
             
@@ -989,10 +989,10 @@
   <div class="outer">
     <div id="footer-left">
       &copy; 2014 - 2017 MrBread&nbsp;|&nbsp;
-      主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
+      Theme by <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
     </div>
      <div id="footer-right">
-      联系方式&nbsp;|&nbsp;970014590@qq.com
+      Contact&nbsp;|&nbsp;970014590@qq.com
     </div>
   </div>
 </footer>
