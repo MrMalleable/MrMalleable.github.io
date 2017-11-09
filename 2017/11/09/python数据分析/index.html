@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>operating-system-01 | The Blog of MrBread</title>
+  <title>python数据分析 | The Blog of MrBread</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="操作系统，英文是Operating System, 是配置在计算机硬件上的第一层软件，是对硬件系统的首次扩充，其主要作用就是和硬件电路打交道，管理好这些设备，提高它们的利用率和系统的吞吐量，并为用户和应用程序提供一个简单的接口，便于用户使用。 操作系统的目标 方便性 有效性 可扩充性 开放性  操作系统的作用 OS作为用户与计算机硬件系统之间的接口 OS作为计算机系统资源的管理者，负责调度资源 O">
-<meta name="keywords" content="操作系统导论">
+  <meta name="description" content="英文版：Python for Data Analysis 主要的就是提供了很多python库对数据处理的介绍，感觉这本书可以作为实际应用需要对数据进行分析的一本参考书。 chapter 3: 这一章主要讲解的是Ipython的使用，这个有很多人性化的功能，提供了很多便捷。 chapter 4: NumPy Basics: Arrays and Vectorized Computation chap">
+<meta name="keywords" content="书籍目录">
 <meta property="og:type" content="article">
-<meta property="og:title" content="operating-system-01">
-<meta property="og:url" content="http://www.google.com/2017/10/22/operating-system-01/index.html">
+<meta property="og:title" content="python数据分析">
+<meta property="og:url" content="http://www.google.com/2017/11/09/python数据分析/index.html">
 <meta property="og:site_name" content="The Blog of MrBread">
-<meta property="og:description" content="操作系统，英文是Operating System, 是配置在计算机硬件上的第一层软件，是对硬件系统的首次扩充，其主要作用就是和硬件电路打交道，管理好这些设备，提高它们的利用率和系统的吞吐量，并为用户和应用程序提供一个简单的接口，便于用户使用。 操作系统的目标 方便性 有效性 可扩充性 开放性  操作系统的作用 OS作为用户与计算机硬件系统之间的接口 OS作为计算机系统资源的管理者，负责调度资源 O">
+<meta property="og:description" content="英文版：Python for Data Analysis 主要的就是提供了很多python库对数据处理的介绍，感觉这本书可以作为实际应用需要对数据进行分析的一本参考书。 chapter 3: 这一章主要讲解的是Ipython的使用，这个有很多人性化的功能，提供了很多便捷。 chapter 4: NumPy Basics: Arrays and Vectorized Computation chap">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2017-10-22T15:18:58.082Z">
+<meta property="og:updated_time" content="2017-11-09T10:41:17.306Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="operating-system-01">
-<meta name="twitter:description" content="操作系统，英文是Operating System, 是配置在计算机硬件上的第一层软件，是对硬件系统的首次扩充，其主要作用就是和硬件电路打交道，管理好这些设备，提高它们的利用率和系统的吞吐量，并为用户和应用程序提供一个简单的接口，便于用户使用。 操作系统的目标 方便性 有效性 可扩充性 开放性  操作系统的作用 OS作为用户与计算机硬件系统之间的接口 OS作为计算机系统资源的管理者，负责调度资源 O">
+<meta name="twitter:title" content="python数据分析">
+<meta name="twitter:description" content="英文版：Python for Data Analysis 主要的就是提供了很多python库对数据处理的介绍，感觉这本书可以作为实际应用需要对数据进行分析的一本参考书。 chapter 3: 这一章主要讲解的是Ipython的使用，这个有很多人性化的功能，提供了很多便捷。 chapter 4: NumPy Basics: Arrays and Vectorized Computation chap">
   
     <link rel="alternate" href="/notimplemented.html" title="The Blog of MrBread" type="application/atom+xml">
   
@@ -73,10 +73,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-operating-system-01" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-python数据分析" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/10/22/operating-system-01/" class="article-date">
-  <time datetime="2017-10-22T15:03:09.000Z" itemprop="datePublished">2017-10-22</time>
+    <a href="/2017/11/09/python数据分析/" class="article-date">
+  <time datetime="2017-11-09T10:33:06.000Z" itemprop="datePublished">2017-11-09</time>
 </a>
     
   </div>
@@ -87,7 +87,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      operating-system-01
+      python数据分析
     </h1>
   
 
@@ -97,35 +97,39 @@
       
         <!-- Table of Contents -->
         
-        <p>操作系统，英文是Operating System, 是配置在计算机硬件上的第一层软件，是对硬件系统的首次扩充，其主要作用就是和硬件电路打交道，管理好这些设备，提高它们的利用率和系统的吞吐量，并为用户和应用程序提供一个简单的接口，便于用户使用。</p>
-<h3 id="操作系统的目标"><a href="#操作系统的目标" class="headerlink" title="操作系统的目标"></a>操作系统的目标</h3><ol>
-<li>方便性</li>
-<li>有效性</li>
-<li>可扩充性</li>
-<li>开放性</li>
-</ol>
-<h3 id="操作系统的作用"><a href="#操作系统的作用" class="headerlink" title="操作系统的作用"></a>操作系统的作用</h3><ol>
-<li>OS作为用户与计算机硬件系统之间的接口</li>
-<li>OS作为计算机系统资源的管理者，负责调度资源</li>
-<li>OS实现了对计算机资源的抽象</li>
-</ol>
-<h3 id="推动操作系统发展的主要动力"><a href="#推动操作系统发展的主要动力" class="headerlink" title="推动操作系统发展的主要动力"></a>推动操作系统发展的主要动力</h3><ol>
-<li>不断提高计算机资源的利用率</li>
-<li>方便用户</li>
-<li>器件的不断更新换代</li>
-<li>计算机体系结构的不断发展</li>
-<li>不断提出新的应用需求</li>
-</ol>
+        <p>英文版：Python for Data Analysis</p>
+<p>主要的就是提供了很多python库对数据处理的介绍，感觉这本书可以作为实际应用需要对数据进行分析的一本参考书。</p>
+<p>chapter 3:</p>
+<p>这一章主要讲解的是Ipython的使用，这个有很多人性化的功能，提供了很多便捷。</p>
+<p>chapter 4:</p>
+<p>NumPy Basics: Arrays and Vectorized Computation</p>
+<p>chapter 5:</p>
+<p>Getting started with Pandas</p>
+<p>chapter 6:</p>
+<p>Data Loading, Storage, and File Formats</p>
+<p>chapter 7:</p>
+<p>Data Wrangling: Clean, Transform, Merge, Reshape</p>
+<p>chapter 8:</p>
+<p>Plotting and Visulization</p>
+<p>Chapter 9:</p>
+<p>Data Aggregation and Group Operations</p>
+<p>chapter 10:</p>
+<p>Time Series</p>
+<p>chapter 11:</p>
+<p>Financial and Economic Data Applications</p>
+<p>chapter 12:</p>
+<p>Advanced NumPy</p>
 <hr>
+<p>end</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.google.com/2017/10/22/operating-system-01/" data-id="cj9scfufu000gxwjsnyiliaen" class="article-share-link">分享</a>
+      <a data-url="http://www.google.com/2017/11/09/python数据分析/" data-id="cj9scfufx000kxwjsk0n12fhg" class="article-share-link">分享</a>
       
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/操作系统导论/">操作系统导论</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/书籍目录/">书籍目录</a></li></ul>
 
     </footer>
   </div>
@@ -175,19 +179,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/10/23/operating-system-02/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">
-        
-          operating-system-02
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/10/12/Some-problem-about-the-theme/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/11/06/operating-system-05/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">目前关于cafe主题设置遇到的几个问题</div>
+      <div class="article-nav-title">OS结构设计</div>
     </a>
   
 </nav>
@@ -217,24 +212,42 @@
 
   
     
-    <div class="widget-wrap">
+  
     
-      <div class="widget" id="toc-widget-fixed">
-      
-        <strong class="toc-title">文章目录</strong>
-        <div class="toc-widget-list">
-              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#操作系统的目标"><span class="toc-number">1.</span> <span class="toc-text">操作系统的目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作系统的作用"><span class="toc-number">2.</span> <span class="toc-text">操作系统的作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#推动操作系统发展的主要动力"><span class="toc-number">3.</span> <span class="toc-text">推动操作系统发展的主要动力</span></a></li></ol>
-          </div>
-      </div>
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title recent-posts">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/11/09/python数据分析/">python数据分析</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/06/operating-system-05/">OS结构设计</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/06/operating-system-04/">操作系统的主要功能</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/27/10-skills-hard-to-learn/">10-skills-hard-to-learn</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/26/windows下git-bash无法修改权限/">windows下git-bash无法修改权限</a>
+          </li>
+        
+      </ul>
     </div>
+  </div>
 
-  
-    
-
-  
-    
-  
-    
   
     
 
